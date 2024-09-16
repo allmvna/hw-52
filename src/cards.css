@@ -9,6 +9,36 @@
 
 /* card itself
 ********************************************************************/
+.playingCards{
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.container{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.container button{
+  padding: 15px 20px;
+  border: none;
+  background: #2065e2;
+  border-radius: 4px;
+  color: white;
+}
+.container button:hover{
+  background: #041f4e;
+}
+
+.item {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
 
 .playingCards .card {
   display: inline-block;

@@ -26,12 +26,15 @@ const App = () => {
   return (
       <>
           <div className="playingCards faceImages">
-              {cards.map ((card, index) => (
-                  <Card key={index} suit = {card.suit} rank = {card.rank} />
+              {cards.map((card, index) => (
+                  <Card key={index} suit={card.suit} rank={card.rank}/>
               ))}
-
+          </div>
+          <div className='container'>
               <button onClick={dealCards} type='button'>Раздать карты</button>
-              <strong>Outcome: </strong>{outcome}
+          </div>
+          <div className='item'>
+              <strong>Комбинация: </strong>{outcome}
           </div>
       </>
   );
