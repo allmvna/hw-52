@@ -21,7 +21,6 @@ const getSuitSymbols = (suit: Suit) => {
     }
 };
 
-
 const Card : React.FC <Props>= ({rank, suit}) => {
     const suitSymbols = getSuitSymbols(suit);
     const cardClasses = `card rank-${rank.toLowerCase()} ${suit}`;
