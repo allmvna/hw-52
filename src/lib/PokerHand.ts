@@ -23,7 +23,6 @@ class PokerHand {
         let threes = 0;
         let fours = 0;
 
-
         for (const repeat of repeats) {
             if(repeat === 2) {
                 pairs++;
@@ -36,25 +35,24 @@ class PokerHand {
             }
         }
 
-
         const firstSuit = this.cards[0].suit;
-        const isFlush = this.cards.every((card)  => card.suit === firstSuit);
+        const isFlush = this.cards.every((card) => card.suit === firstSuit);
 
-        if (fours === 2) {
-            return 'Four of kind!';
+
+        if (fours > 0) {
+            return 'Four of a Kind!';
         } else if (threes > 0 && pairs > 0) {
-            return 'Full house!';
+            return 'Full House!';
         } else if (isFlush) {
             return 'Flush!';
         } else if (threes > 0) {
-            return 'Three of kind!';
-        } else if (pairs === 0) {
-            return 'Two pairs!';
-        } else if (pairs === 1){
-            return 'One pair!';
+            return 'Three of a Kind!';
+        } else if (pairs === 2) {
+            return 'Two Pairs!';
+        } else if (pairs === 1) {
+            return 'One Pair!';
         }
-        return  'High card!';
-
+        return 'High Card!';
     }
 }
 
