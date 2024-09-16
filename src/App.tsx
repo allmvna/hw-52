@@ -1,16 +1,28 @@
 import './App.css';
+import {useState} from 'react';
+import CardDeck from './lib/CardDeck';
+import CardClass from './lib/CardClass';
 import Card from './Card';
-import {Rank, Suit} from './type';
 
 const App = () => {
+    const [cards, setCards] = useState<CardClass[]>([]);
+
+
+    const dealCards = () => {
+        const deck = new CardDeck();
+        const newCards = deck.getCards(5);
+        setCards(newCards);
+    };
+
 
   return (
       <>
           <div className="playingCards faceImages">
-              <Card rank={Rank._3} suit={Suit.DIAMS}/>
-              <Card rank={Rank._J} suit={Suit.HEARTS}/>
-              <Card rank={Rank._A} suit={Suit.CLUBS}/>
-              <Card rank={Rank._K} suit={Suit.SPADES}/>
+              {cards.map ((card, index) => (
+                  <Card key={index} suit = {card.suit} rank = {card.rank} />
+              ))}
+
+              <button onClick={dealCards} type='button'>Раздать карты</button>
           </div>
       </>
   );

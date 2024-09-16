@@ -1,9 +1,9 @@
-import {Rank, Suit} from "../type.ts";
+import {Rank, Suit} from '../type';
 
 class CardClass {
-    constructor(public rank: Rank, public suit: Suit) {
-
-
+    constructor(
+        public rank: Rank,
+        public suit: Suit) {
     }
 
 }
